@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ioanna Syrma — Portfolio</title>
+    <meta name="description" content="Ioanna Syrma — developer, designer, maker." />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap glass-card">
+        <header>
+            <div class="brand">
+                <a href="index.html" class="logo">
+                    <img src="resources/logo_modern_trans.PNG" alt="Ioanna Syrma Logo">
+                </a>
+                <div>
+                    <div style="font-size:1.5rem;font-weight:700;color:var(--title)">Ioanna Syrma</div>
+                    <div style="font-size:.85rem;color:var(--muted)">Developer •  UX Designer • Creator</div>
+                </div>
+            </div>
+
+            <div class="nav-wrapper">
+                <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">☰</button>
+                <nav id="nav" aria-label="Primary navigation">
+                    <button id="closeNav" class="close-nav-btn" aria-label="Close menu">✕</button>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html" style="color:var(--accent)">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="grid projects" id="projects" aria-labelledby="projects-heading">
+                <h1 id="projects-heading" style="grid-column:1/-1;margin:0 0 8px 0">Projects</h1>
+
+                <article class="card" role="article">
+                    <a class="thumb" href="#" aria-hidden="true"></a>
+                    <h3>Project One</h3>
+                    <p style="color:var(--muted)">Brief summary of the project, tech used, and a link to live/demo or repo.</p>
+                </article>
+
+                <article class="card" role="article">
+                    <a class="thumb" href="#" aria-hidden="true"></a>
+                    <h3>Project Two</h3>
+                    <p style="color:var(--muted)">Brief summary of the project, tech used, and a link to live/demo or repo.</p>
+                </article>
+
+                <article class="card" role="article">
+                    <a class="thumb" href="#" aria-hidden="true"></a>
+                    <h3>Project Three</h3>
+                    <p style="color:var(--muted)">Brief summary of the project, tech used, and a link to live/demo or repo.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            © <span id="year"></span> Ioanna Syrma — Built with HTML & CSS
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
