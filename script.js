@@ -117,3 +117,35 @@ window.addEventListener('scroll', function() {
     if (window.innerWidth > 980 && body.classList.contains('nav-open')) closeMenu();
   });
 })();
+
+const sections = document.querySelectorAll('.fade-section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      if (entry.isIntersecting && entry.target.id === "projects") {
+        const articles = entry.target.querySelectorAll("article");
+        articles.forEach((a, i) => {
+          a.style.opacity = 0; // αρχικά κρυφό
+          a.style.transform = "translateY(30px)";
+          a.style.animation = `fadeUp 1s ease forwards`;
+          a.style.animationDelay = `${i * 0.3 + 0.3}s`;
+        });
+      }
+      if (entry.isIntersecting && entry.target.id === "contact") {
+      const elems = entry.target.querySelectorAll("h2, .card");
+      elems.forEach((el, i) => {
+        el.style.animation = `fadeUp 1s ease forwards`;
+        el.style.animationDelay = `${i * 0.3}s`; // πρώτα h2, μετά div
+      });
+      }
+    }
+  });
+}, {
+  threshold: 0.2 // πόσο πρέπει να φαίνεται το section για να ξεκινήσει το animation
+});
+
+sections.forEach(section => observer.observe(section));
+
