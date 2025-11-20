@@ -522,7 +522,6 @@ footer {
     right: 0;
     height: 100vh;
     width: 290px;
-    color:str;
     max-width: 85vw;
     background: var(--bg);        /* make panel visible */
     color: var(--text);          /* ensure link text is visible */
@@ -532,7 +531,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 1.25rem 1.5rem 1.25rem;
+    padding: 6rem 1.25rem 1.5rem 1.25rem;
     box-sizing: border-box;
     gap: 0.5rem;
     z-index: 10030;              /* above overlay */
@@ -602,7 +601,7 @@ footer {
     inset: 0;
     background: rgba(255, 255, 255, 0.15);
     z-index: 10015;              /* below nav, above page */
-    opacity: 5;
+    opacity: 0;
     transition: opacity 220ms ease;
     pointer-events: none;
   }
@@ -624,10 +623,6 @@ footer {
 
   .nav-cta a{
     justify-self: center;
-  }
-
-  .nav-wcta{
-    padding-left: 5px;
   }
 
   header {
