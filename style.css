@@ -188,7 +188,12 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
+/*ANIMATIONS*/
 @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -206,49 +211,11 @@ nav a:hover {
   transform: translateY(0);
 }
 
-#animated-text h1 {
-  font-size: 2rem;
+.seq {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
 }
 
-#animated-text h2{
-  font-size: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
-}
-
-#animated-text h3{
-  font-size: 1.2rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
-}
-
-#animated-text p, #animated-text a {
-  font-size: 1rem;
-  margin-top: 10px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.6s; /* ξεκινά λίγο αργότερα από το h1 */
-}
-
-#projects article {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-#contact h2,
-#contact .card {
-  opacity: 0;
-  transform: translateY(30px);
-  /* δεν βάζουμε animation εδώ, θα το κάνει JS */
-}
-
+/*PROJECTS*/
 .grid.projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -283,15 +250,6 @@ nav a:hover {
   transform: translateY(-4px);
 }
 
-#cont{
-  justify-self: left;
-  grid-column: 1 / -1;  /* καλύπτει όλες τις στήλες */
-  clear: both;
-}
-
-.contact-footer > div:last-child p {
-  margin-bottom: 1rem;
-}
 
 footer {
   text-align: center;
@@ -319,7 +277,7 @@ footer {
 }
 
 
-/* Success Modal Styling */
+/* Success Modal Styling BUTTON OF CONT FORM*/
 #successModal {
   display: none !important;
   position: fixed;
@@ -404,6 +362,70 @@ footer {
   color: var(--accent);
 }
 
+/*CONTACT*/
+#cont{
+  justify-self: left;
+  grid-column: 1 / -1;  /* καλύπτει όλες τις στήλες */
+  clear: both;
+}
+
+.nav-wcta{
+  color: var(--title);
+  transition: 0.25s ease;
+  color: var(--title);
+  padding-top: 4px;
+}
+
+/* CTA BUTTON (Contact) */
+.nav-cta {
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  border: 0.5px solid var(--title);
+  color: var(--title);
+  background-color: rgba(206, 207, 215, 0.432);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.25s ease;
+  color: var(--title);
+  margin: 0 0 1rem 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.nav-cta a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.nav-cta:hover {
+  background: var(--accent);
+  color: white !important;
+  transform: translateY(-2px);
+  border: 1px solid var(--accent);
+}
+
+.nav-cta.active{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+nav a.active {
+  color: var(--accent) !important;
+}
+
+.contact-footer > div:last-child p {
+  margin-bottom: 1rem;
+}
+
 .contact-footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -470,7 +492,7 @@ footer {
   transform: translateY(-1px);
 }
 
-
+/*SCREENS BELOW 980px*/
 @media (max-width: 980px) {
   
   body {
@@ -498,6 +520,7 @@ footer {
     right: 0;
     height: 100vh;
     width: 280px;
+    color:str;
     max-width: 85vw;
     background: var(--bg);        /* make panel visible */
     color: var(--text);          /* ensure link text is visible */
@@ -514,6 +537,56 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
 
+  #nav {
+    background:rgba(224, 225, 233, 0.953);/*rgba(203, 203, 212, 0.882); /*rgba(255, 255, 255, 0.89);*/
+    backdrop-filter: blur(10px) saturate(20%);
+    -webkit-backdrop-filter: blur(70px) saturate(20%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius:20px;
+  }
+
+  nav a{
+    font-weight: 550;
+    letter-spacing: 0.5px;
+    margin-top: 1.2rem;
+    background: transparent !important;
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 1.3rem; /* ensure consistent readable size on mobile */
+    line-height: 1.2;
+  }
+
+  nav a:hover {
+    background-color: transparent !important;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .close-nav-btn {
+    display: flex !important;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+    z-index: 10031;
+    background: none;
+    border-radius: 8px;
+  }
+
+  .close-nav-btn:hover {
+    transform: scale(1.08);
+    color: var(--accent);
+  }
+
    /* when nav open, slide it in and push main content left */
   body.nav-open nav {
     transform: translateX(0);
@@ -523,9 +596,9 @@ footer {
   .nav-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(255, 255, 255, 0.15);
     z-index: 10015;              /* below nav, above page */
-    opacity: 0;
+    opacity: 5;
     transition: opacity 220ms ease;
     pointer-events: none;
   }
@@ -537,6 +610,20 @@ footer {
 
   body.nav-open .wrap {
     transform: none;
+  }
+
+  .nav-cta {
+    max-width: fit-content;
+    margin-top: 1rem;
+    padding: 6px 12px;
+    background-color: none !important;
+    backdrop-filter: blur(900px) saturate(100%);
+    -webkit-backdrop-filter: blur(70px) saturate(20%);
+    font-size: 1.4rem;
+  }
+
+  .nav-cta a{
+    justify-self: center;
   }
 
   header {
@@ -576,40 +663,6 @@ footer {
     padding-top: 100px; /* space for fixed header */
     margin: 1rem 0;
     margin-top: 2.5rem;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav a {
-    padding: 0.75rem 0.5rem;
-    border-radius: 8px;
-    color: var(--text);
-    font-size: 1.3rem; /* ensure consistent readable size on mobile */
-    line-height: 1.2;
-  }
-
-  .close-nav-btn {
-    display: flex !important;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text);
-    z-index: 10031;
-    background: none;
-    border-radius: 8px;
-  }
-
-  .close-nav-btn:hover {
-    transform: scale(1.08);
-    color: var(--accent);
   }
 
   .wrap {

@@ -125,27 +125,16 @@ const observer = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
 
-      if (entry.isIntersecting && entry.target.id === "projects") {
-        const articles = entry.target.querySelectorAll("article");
-        articles.forEach((a, i) => {
-          a.style.opacity = 0; // αρχικά κρυφό
-          a.style.transform = "translateY(30px)";
-          a.style.animation = `fadeUp 1s ease forwards`;
-          a.style.animationDelay = `${i * 0.3 + 0.3}s`;
-        });
-      }
-      if (entry.isIntersecting && entry.target.id === "contact") {
-      const elems = entry.target.querySelectorAll("h2, .card");
-      elems.forEach((el, i) => {
-        el.style.animation = `fadeUp 1s ease forwards`;
-        el.style.animationDelay = `${i * 0.3}s`; // πρώτα h2, μετά div
+      // Βρίσκουμε όλα τα elements με κλάση .seq μέσα στο section
+      const seqElements = entry.target.querySelectorAll('.seq');
+      seqElements.forEach((el, i) => {
+        el.style.animation = `fadeUp 0.8s ease forwards`;
+        el.style.animationDelay = `${i * 0.25}s`; // sequential delay
       });
-      }
     }
   });
 }, {
-  threshold: 0.2 // πόσο πρέπει να φαίνεται το section για να ξεκινήσει το animation
+  threshold: 0.2
 });
 
 sections.forEach(section => observer.observe(section));
-
