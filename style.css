@@ -382,7 +382,7 @@ footer {
   color: var(--title);
   transition: 0.25s ease;
   color: var(--title);
-  padding-top: 4px;
+  padding-top: 3px;
   font-size: 18px;
 }
 
@@ -390,26 +390,14 @@ footer {
 .nav-cta {
   padding: 3px 8px;
   border-radius: var(--radius);
-  color: white;
-  background-repeat: norepeat;
-  background: var(--title);/*rgba(255,255,255,0.2);/*rgba(206, 207, 215, 0.432);*/
+  color: var(--title);
   opacity: 0.60;
-  border: 1px solid rgba(0,0,0,0.1);
-  backdrop-filter: blur(0px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: 0.25s ease;
+  font-size: 18px;
   margin: 0 0 1rem 0;
-}
-
-.nav-cta a{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   white-space: nowrap;
   text-decoration: none;
-  vertical-align: middle;
-  opacity:0.60 ;
+  border: 1px solid var(--title);
 }
 
 .nav-cta:hover {
@@ -549,7 +537,8 @@ footer {
     backdrop-filter: blur(200px) saturate(180%);
     -webkit-backdrop-filter: blur(140px) saturate(180%);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius:20px;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
   }
 
   nav a{
