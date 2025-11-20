@@ -156,18 +156,21 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--title);
   font-weight: 500;
+  opacity: 0.65;
   transition: color 0.2s ease;
 }
 
 nav a.active {
-  color: var(--accent) !important;
+  color: var(--title)!important;
   font-weight: 600;
+  opacity: 1;
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: var(--accent) !important;
+  opacity: 1;
   transform: translateY(-2px);
 }
 
@@ -269,6 +272,7 @@ footer {
 /* Responsive menu for small screens */
 .menu-btn {
   display: none;
+  color: var(--accent);
   background: rgba(255,255,255,0.2);
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: var(--radius);
@@ -379,6 +383,7 @@ footer {
   transition: 0.25s ease;
   color: var(--title);
   padding-top: 4px;
+  font-size: 18px;
 }
 
 /* CTA BUTTON (Contact) */
@@ -388,19 +393,13 @@ footer {
   color: white;
   background-repeat: norepeat;
   background: var(--title);/*rgba(255,255,255,0.2);/*rgba(206, 207, 215, 0.432);*/
-  opacity: 0.85;
+  opacity: 0.60;
   border: 1px solid rgba(0,0,0,0.1);
   backdrop-filter: blur(0px) saturate(180%);
   -webkit-backdrop-filter: blur(14px) saturate(180%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: 0.25s ease;
   margin: 0 0 1rem 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  text-decoration: none;
-  vertical-align: middle;
 }
 
 .nav-cta a{
@@ -410,18 +409,21 @@ footer {
   white-space: nowrap;
   text-decoration: none;
   vertical-align: middle;
+  opacity:0.60 ;
 }
 
 .nav-cta:hover {
-  background: var(--accent);
+  background: var(--accent)!important;
   color: white !important;
   border: 1px solid var(--accent);
 }
 
 .nav-cta.active{
-  border-color: var(--accent);
+  border-color: var(--title);
   color: white !important;
-  background: var(--accent);
+  background: var(--title);
+  opacity: 0.85;
+  font-weight: 500;
 }
 
 .contact-footer > div:last-child p {
